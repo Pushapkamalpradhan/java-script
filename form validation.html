@@ -1,0 +1,128 @@
+<html>
+  <body>
+    <script type="text/javascript">  
+      function validate(){  
+        var name=document.f1.name.value;  
+       var date_of_birth=document.f1.date_of_birth.value;
+        var phone=document.f1.phone.value;  
+        var email=document.f1.email.value; 
+        var passwordlength=document.f1.password.value.length;  
+        var gender=document.f1.gender.value; 
+        var seek=document.f1.seek.value; 
+
+        var status=false;  
+        if(phone==""){  
+          document.getElementById("phone123").innerHTML=  
+            "  Please enter your name";  
+          status=false;
+        }else{  
+          document.getElementById("phone123").innerHTML="hellio12";  
+          status=true;
+        } 
+        
+          if(date_of_birth==""){  
+          document.getElementById("date123").innerHTML=  
+            "  Please enter your name";  
+          status=false;
+        }else{  
+          document.getElementById("date123").innerHTML="hellio12";  
+          status=true;
+        } 
+     
+          if(name==""){  
+          document.getElementById("namelocation").innerHTML=  
+            "  Please enter your name";  
+          status=false;
+        }else{  
+          document.getElementById("namelocation").innerHTML="hellio12";  
+          status=true;
+        } 
+        
+        
+          if(email==""){  
+          document.getElementById("email123").innerHTML=  
+            "  Please enter your name";  
+          status=false;
+        }else{  
+          document.getElementById("email123").innerHTML="hellio12";  
+          status=true;
+        }  
+
+        if(gender==""){  
+          document.getElementById("gender123").innerHTML=  
+            "  Please enter gender";  
+          status=false;
+        }else{  
+          document.getElementById("gender123").innerHTML="hellio12";  
+          status=true;
+        } 
+        
+         if(seek==""){  
+          document.getElementById("seek123").innerHTML=  
+            "  Please enter seek";  
+          status=false;
+        }else{  
+          document.getElementById("seek123").innerHTML="hellio12";  
+          status=true;
+        } 
+        
+
+        if(passwordlength<6){  
+          document.getElementById("passwordlocation").innerHTML=  
+            " Password must be greater than 6";  
+          status=false; 
+        }else{  
+          document.getElementById("passwordlocation").innerHTML=" hello123";  
+        }  
+
+        return status;  
+      }  
+    </script>  
+    <form name="f1" action="http://www.javatpoint.com/javascriptpages/valid.jsp" onsubmit="return validate()"> 
+
+      
+      <input type="text" placeholder="Username..." oninput="this.className = ''" name="name" value="{{ old('name') }}">
+      <span id="namelocation" style="color:red"></span>
+
+      <br /> <br /> <br />
+      
+      <input placeholder="Phone..." oninput="this.className = ''" name="phone" value="{{ old('phone') }}">
+         <span id="phone123" style="color:red"></span>
+        <br /> <br /> <br />
+      
+      
+       <input type="email" placeholder="E-mail..." oninput="this.className = ''" name="email" value="{{ old('email') }}">
+       <span id="email123" style="color:red"></span>
+       <br /> <br /> <br />
+       
+      <input type="password" name="password"/>  
+      <span id="passwordlocation" style="color:red"></span>
+
+      <br /> <br /> <br />
+      <select name="gender" id="select" class="form-control">
+        <option value="" disabled="disabled" selected="selected">Who i am?</option>
+        <option name="male" value="Male">Male</option>
+        <option name="female" value="Female">Female</option>
+      </select> 
+      <span id="gender123" style="color:red"></span>
+<br /> <br /> <br />
+
+
+      <select name="seek">
+        <option name="male" value="">I am looking for </option>
+        <option name="male" value="Male">Male</option>
+        <option name="female" value="Female">Female</option>
+      </select>
+      <span id="seek123" style="color:red"></span>
+
+      <br /> <br /> <br />
+      
+   <input type="date" class="form-control" name = "date_of_birth" value="{{ old('date_of_birth') }}"  autocomplete="date_of_birth">
+      
+      <span id="date123" style="color:red"></span>
+        <br /> <br /> <br />
+      
+      <input type="submit" value="register"/> 
+    </form>  
+  </body>
+</html>
