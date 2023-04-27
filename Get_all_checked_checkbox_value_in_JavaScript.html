@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>
+        Get all checked checkbox value in JavaScript
+    </title>
+</head>
+
+<body>
+    <h3>Select or Deselect all or some checkboxes as per your mood:</h3>
+    <input type="checkbox" name="chk" value="Smile">Smile<br>
+    <input type="checkbox" name="chk" value="Cry">Cry<br>
+    <input type="checkbox" name="chk" value="Laugh">Laugh<br>
+    <input type="checkbox" name="chk" value="Angry">Angry<br>
+    <br>
+    <input type="checkbox" onclick='set_data(this)' value="Select All" />
+
+    <input type="checkbox" name="chk2" value="Smile">Smile<br>
+    <input type="checkbox" name="chk2" value="Cry">Cry<br>
+    <input type="checkbox" name="chk2" value="Laugh">Laugh<br>
+    <input type="checkbox" name="chk2" value="Angry">Angry<br>
+    <br>
+    <input type="checkbox" onclick='set_data2(this)' value="Select All" />
+
+
+
+    <script type="text/javascript">
+        function set_data(ele) {
+            var ele12 = document.getElementsByName('chk');
+            if (ele.checked) {
+                for (var i = 0; i < ele12.length; i++) {
+                    if (ele12[i].type == 'checkbox') {
+                        ele12[i].checked = true;
+                    }
+                }
+            } else {
+                for (var i = 0; i < ele12.length; i++) {
+                    if (ele12[i].type == 'checkbox') {
+                        ele12[i].checked = false;
+                    }
+                }
+            }
+        }
+
+        function set_data2(ele) {
+            var ele12 = document.getElementsByName('chk2');
+            if (ele.checked) {
+                for (var i = 0; i < ele12.length; i++) {
+                    if (ele12[i].type == 'checkbox') {
+                        ele12[i].checked = true;
+                    }
+                }
+            } else {
+                for (var i = 0; i < ele12.length; i++) {
+                    if (ele12[i].type == 'checkbox') {
+                        ele12[i].checked = false;
+                    }
+                }
+            }
+        } 
+    </script>
+</body>
+</html>
